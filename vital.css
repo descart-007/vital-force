@@ -603,3 +603,10 @@ article {
         max-height: 180px;
     }
 }
+
+@media (min-width:1000px) {
+    .form{
+        width: 80%;
+        margin-left: 10%;
+    }
+}
