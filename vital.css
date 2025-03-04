@@ -1,0 +1,605 @@
+
+/* General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+:root {
+    --main-blue: #0A58BF;
+    --dark-blue: #000044;
+    --division-white: rgb(236, 241, 253);
+    --main-white: rgb(218, 223, 234);
+    --main-purple: #7110f8;
+    --light-purple: #240a36;
+}
+
+body {
+    background: rgb(226, 226, 226);
+    display: flex; /* Use flexbox */
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+
+.main {
+    width: 100%;
+    background-color: var(--main-white);
+    /* height: fit-content; Let content dictate height */
+}
+
+.head-main {
+    width: 100%;
+    height: 6vh;  /* Consider using rem or em */
+    min-height: 50px;  /* Set minimum height */
+    background-color: black;
+    display: flex;
+    position: fixed;
+    justify-content: space-around;
+    align-items: center; /* Center items vertically */
+    z-index: 10;
+    flex-wrap: wrap;  /* Allow wrapping on small screens */
+}
+
+.head-hiper {
+     width: 100%; /* Ensure links fill available space */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.head-link {
+    /* width: 100%;  Let content dictate width */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem; /* Add horizontal padding */
+}
+
+.head-link:hover {
+    background-color: var(--light-purple);
+}
+
+.head-link:hover .head-text {
+    color: white;
+}
+
+.head-text {
+    color: white;
+    font-size: 1rem; /* Use rem units */
+    text-align: center;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+article {
+    width: 100%;
+    padding: 5vh 5% 5vh 5%; /* Consistent padding */
+    background: linear-gradient(var(--main-white), var(--division-white));
+     padding-top: calc(6vh + 20px); /* Add padding for header */
+
+}
+/*Specific rule to overwrite the padding top on the home article, so it doesn't overlap other articles padding*/
+.home + article{
+     padding-top: 5vh;
+}
+
+.division {
+    width: 100%;
+    height: 10vh; /* Use viewport units or rem */
+     min-height: 50px;
+    background-color: var(--division-white);
+}
+
+.inner-division {
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-white);
+    border-top-left-radius: 50%; /* Use percentages */
+    border-top-right-radius: 50%;
+}
+
+.home {
+    margin-top: 6vh; /* Adjust for fixed header */
+    width: 100%;
+    /* height: 90vh; Don't use fixed height! */
+    height: 80vh;
+    background-image: url("images/home1.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex; /* Add flexbox */
+    align-items: center; /* Vertically center content */
+}
+
+.home-descript {
+    /* height: 100%;  Let content determine height */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 5;
+    backdrop-filter: blur(5px);
+    width: 100%; /* Ensure full width */
+     padding: 40px 20px; /* Add some padding */
+}
+
+.logo {
+    /* justify-items: center;  Not needed with flexbox */
+    margin-top: 2rem; /* Use rem units */
+    width: 15rem; /* Use rem or percentages */
+    max-width: 80%;  /* Ensure it fits on small screens */
+}
+
+.home-title {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 2.5rem; /* Use rem units */
+    color: white;
+    padding: 0 20px;  /* Add horizontal padding */
+}
+
+.sobre {
+    /* height: 110vh; Removed fixed height */
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 10%; /* Responsive padding */
+     /* margin-top: 5vh; Remove top margin*/
+    padding-bottom: 20vh;
+}
+
+.somos {
+    width: 100%;
+      display: flex;
+    flex-direction: column; /* Stack title and text vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.somos-title {
+    text-align: center;
+    margin-bottom: 1rem; /* Add space below title */
+}
+
+.somos-text {
+    margin-top: 2vh;
+    font-size: 1.2rem;  /* Use rem units */
+    line-height: 1.5;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%; /* Full width */
+    max-width: 800px; /* Limit maximum width */
+    text-align: justify;
+}
+/*Propositos section*/
+.propositos{
+    border-top: 0.2px solid black;
+    padding-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    margin-top: 15vh;
+    width: 100%;
+}
+
+.proposito-title{
+    font-size: 3rem;
+}
+
+.topicos{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.proposito{
+    margin: auto;
+    width: 20vh;
+    height: 20vh;
+    background-color: #000056;
+    transition: 0.5s;
+    border-radius: 50%;
+}
+
+.proposito:nth-child(even){
+    margin-top: 10vh;
+}
+
+.proposito:hover{
+    width: 30vh;
+    height: 30vh;
+}
+
+.proposito-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.proposito-text{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.proposito-descricao{
+    display: none;
+    transition: 0.5s;
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.proposito:hover .proposito-descricao{
+    display: block;
+}/*Quem Section*/
+.quem {
+   /* height: fit-content;  Let content determine height */
+   min-height: 100vh; /*Ensure the section takes the whole screen*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; /* Distribute space */
+
+}
+
+.quem-title {
+    font-size: 2.5rem;
+    margin-bottom: 3vh;
+    color: black;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.quem-pessoa {
+    margin-top: 3vh;
+    width: 80%;
+   /* height: fit-content; Let content determine height */
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    border-radius: 30px;
+    padding: 1% 5%; /* Consistent padding */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+}
+
+.quem-img {
+    object-fit: cover; /* Ensure images cover the area without stretching */
+    height: 30vh;      /* Consistent height */
+    width: 30vh;       /* Make them square */
+    border-radius: 50%;  /* Circular images */
+    max-width: 200px; /* Maximum width */
+    max-height: 200px;
+    border: 2px solid black;
+}
+
+
+.nome {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1vh;
+     color: black;
+}
+
+.quem-text {
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.8rem;
+    width: 60%; /*Keep 60% width*/
+     display: flex;        /* Add flexbox */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center vertically */
+
+}
+
+
+/* Section Titles */
+.detalhes-title, .etapas-title, .duvidas-title, .inscricao-title {
+    font-size: 2rem;   /* Use rem units */
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Containers */
+.detalhes-container, .etapas-container, .duvidas-container {
+    width: 90%;     /* Responsive width */
+    max-width: 800px;  /* Limit maximum width */
+    margin: 0 auto;
+    padding: 1.5rem;   /* Use rem units */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.detalhes-subtitle {
+    font-size: 1.5rem;  /* Use rem units */
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--dark-blue);
+}
+
+.detalhes-lista, .etapas-lista {
+    list-style: disc;
+    margin-left: 1.5rem;   /* Use rem units */
+    margin-bottom: 1rem;
+    font-size: 1rem;     /* Use rem units */
+    line-height: 1.6;
+}
+.etapas-lista {
+    list-style: none; /* Remove bullets from ordered list */
+    counter-reset: item; /* Initialize counter */
+    padding-left: 0;
+}
+
+/* Style list items with numbers */
+.etapas-lista li {
+    counter-increment: item;              /* Increment counter */
+    margin-bottom: 0.5rem;
+    position: relative;                /* For absolute positioning of number */
+    padding-left: 2rem;
+}
+
+.etapas-lista li::before {
+    content: counter(item) ".";      /* Display counter */
+    position: absolute;                 /* Absolute positioning */
+    left: 0;
+    font-weight: bold;
+}
+.etapa-numero {
+   /* font-weight: bold; Removed: we are already displaying the number */
+    margin-right: 0.3rem;
+}
+
+.duvida {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.pergunta {
+    font-size: 1.1rem; /* Use rem units */
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.8rem;
+    background-color: #eee;
+    border-radius: 5px;
+     display: block; /* Important: for the summary to fill width */
+     width: 100%; /* Fill container width */
+    text-align: left; /* Align text to the left */
+    border: none; /*Remove the default border*/
+
+}
+
+.pergunta:hover {
+    background-color: #ddd;
+}
+.duvida[open] .pergunta{
+    border-bottom-left-radius:0;
+     border-bottom-right-radius: 0;
+}
+
+.resposta {
+    padding: 0.8rem;
+    font-size: 1rem; /* Use rem units */
+    line-height: 1.5;
+}
+
+.inscricao-button-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.inscricao-button {
+    padding: 1rem 2rem;     /* Use rem units */
+    font-size: 1.1rem;    /* Use rem units */
+    background-color: var(--main-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.inscricao-button:hover {
+    background-color: var(--dark-blue);
+}
+
+/* Form Styles */
+
+.inscricao-form {
+    width: 90%;      /* Responsive width */
+    max-width: 800px;   /* Limit maximum width */
+    margin: 0 auto;
+    padding: 1.5rem;  /* Use rem units */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+.form-group label::after{
+    content: ":";
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.form-group textarea {
+    width: 100%;
+    padding: 0.6rem;   /* Use rem units */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem; /* Use rem units */
+}
+
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 0.6rem 0; /* Adjust padding */
+    font-size: 1rem;  /* Use rem units */
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    padding: 0.8rem 1.5rem; /* Use rem units */
+    font-size: 1rem;   /* Use rem units */
+    background-color: var(--main-blue);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block; /* Make the button full-width */
+    width: 100%; /* Full-width button */
+    margin-top: 1rem;
+}
+
+.submit-button:hover {
+    background-color: var(--dark-blue);
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* Small screens (mobile) */
+@media (max-width: 767px) {
+     /* Header */
+
+    .head-main{
+        display: none;
+    }
+
+    .head-link {
+        padding: 0 0.5rem; /* Reduce padding */
+    }
+
+    .head-text {
+        font-size: 0.8rem; /* Reduce font size */
+    }
+
+    .home{
+        margin-top: 0;
+        height: 90vh;
+    }
+
+     /* Home Section */
+    .home-title {
+        font-size: 2rem; /* Reduce font size */
+    }
+
+    /* Sobre Section */
+    .somos-text {
+        font-size: 1rem;  /* Reduce font size */
+        text-align: center;
+    }
+
+      /* Propositos Section */
+    .proposito {
+        width: 40vw; /* Wider on mobile */
+        height: 40vw;
+        margin-top: 16vh;
+    }
+
+    .proposito-title{
+        text-align: center;
+    }
+
+
+    .proposito:hover .proposito-descricao{
+        display: none;
+    }
+
+     .proposito:nth-child(1) {
+        margin-top: 6vh; /* Adjust spacing */
+    }
+
+    .proposito-text{
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .topicos{
+        flex-direction: column;
+    }
+
+    /* Quem Section */
+    .quem-pessoa {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+    .quem-pessoa:nth-child(even) {
+         flex-direction: column;/*Also makes even ones stack vertically*/
+    }
+
+    .quem-img,
+    .img-left, .img-right{
+        width: 50vw; /* Larger images on mobile */
+        height: 50vw;
+        max-width: 150px;
+        max-height: 150px;
+    }
+    .quem-text{
+        font-size: 1.3rem;
+        width: 100%;
+    }
+
+    .quem-descricao{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+      /* Other Sections */
+    .detalhes-subtitle {
+        font-size: 1.3rem;
+    }
+    .detalhes-title, .etapas-title, .duvidas-title, .inscricao-title {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Quem Section */
+    .quem-pessoa {
+        flex-direction: column; /* Stack items vertically */
+    }
+     .quem-pessoa:nth-child(even) {
+         flex-direction: column;/*Also makes even ones stack vertically*/
+    }
+
+     .quem-img,
+     .img-left, .img-right
+     {
+        width: 40vw; /* Adjust image size */
+        height: 40vw;
+         max-width: 180px;
+        max-height: 180px;
+    }
+}
